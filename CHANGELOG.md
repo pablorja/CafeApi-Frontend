@@ -76,3 +76,62 @@ Planificado:
 - Configuración del interceptor JWT.
 - Implementación inicial de AuthService.
 - Integración con el backend CafeApi.
+
+---
+
+## [0.2.0] - 30/10/2026
+
+### Añadido
+
+#### Configuración
+
+- Implementación de `api.config.ts` para la configuración centralizada de la API.
+- Configuración de URL base para comunicación con el backend.
+- Integración de `HttpClient` para consumo de servicios REST.
+
+#### Autenticación
+
+- Implementación completa de `auth.service.ts`.
+- Implementación del flujo de autenticación con JWT.
+- Integración del login con el backend CafeApi.
+- Gestión de inicio y cierre de sesión.
+
+#### Persistencia de sesión
+
+- Implementación de `storage.service.ts`.
+- Almacenamiento seguro del token JWT.
+- Almacenamiento de la información del usuario autenticado.
+- Métodos para recuperación y eliminación de datos de sesión.
+
+#### Seguridad
+
+- Implementación funcional de `auth.guard.ts`.
+- Implementación funcional de `role.guard.ts`.
+- Protección de rutas autenticadas.
+- Control de acceso basado en roles.
+
+#### Interceptores
+
+- Implementación funcional de `auth.interceptor.ts`.
+- Inclusión automática del token JWT en las peticiones HTTP autorizadas.
+
+#### Modelos
+
+- Integración de modelos de autenticación:
+  - `login-request.model.ts`
+  - `login-response.model.ts`
+  - `user.model.ts`
+
+### Mejorado
+
+- Organización de la capa Core.
+- Separación de responsabilidades entre autenticación, almacenamiento y seguridad.
+- Estructura preparada para la implementación del módulo visual de autenticación.
+
+### Estado
+
+✅ Fase 1 completada.
+
+La infraestructura de autenticación y autorización se encuentra operativa y preparada para iniciar el desarrollo de la interfaz de usuario.
+
+---

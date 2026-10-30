@@ -1,94 +1,256 @@
-# CafeClient
+# ☕ ApiCafe Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Frontend del sistema ApiCafe desarrollado con Angular Standalone Components.
 
-## Development server
+El proyecto implementa una arquitectura escalable basada en características (Feature-Based Architecture), autenticación mediante JWT y control de acceso por roles.
 
-To start a local development server, run:
+---
+
+# 🚀 Tecnologías
+
+- Angular
+- TypeScript
+- Angular Router
+- HttpClient
+- RxJS
+- JWT Authentication
+- Guards
+- Interceptors
+
+---
+
+# 📁 Estructura del Proyecto
+
+```text
+src/
+│
+├── app/
+│   │
+│   ├── core/
+│   │   ├── config/
+│   │   ├── constants/
+│   │   ├── guards/
+│   │   ├── interceptors/
+│   │   ├── models/
+│   │   └── services/
+│   │
+│   ├── features/
+│   │
+│   ├── layout/
+│   │
+│   └── shared/
+│
+├── environments/
+│
+└── ...
+```
+
+---
+
+# 🏗️ Arquitectura
+
+El proyecto sigue una separación clara de responsabilidades.
+
+## Core
+
+Contiene elementos globales de la aplicación.
+
+Ejemplos:
+
+- Servicios globales
+- Guards
+- Interceptors
+- Configuración
+- Modelos compartidos
+
+---
+
+## Features
+
+Contiene los módulos funcionales del sistema.
+
+Ejemplos futuros:
+
+```text
+features/
+├── auth/
+├── users/
+├── inventory/
+├── sales/
+└── reports/
+```
+
+---
+
+## Shared
+
+Componentes reutilizables por toda la aplicación.
+
+Ejemplos:
+
+- Botones
+- Tablas
+- Modales
+- Pipes
+- Directivas
+
+---
+
+## Layout
+
+Elementos estructurales de la interfaz.
+
+Ejemplos:
+
+- Navbar
+- Sidebar
+- Dashboard Layout
+- Auth Layout
+
+---
+
+# 🔐 Autenticación
+
+Actualmente se encuentra implementada la infraestructura base de autenticación.
+
+### Componentes desarrollados
+
+#### AuthService
+
+Responsable de:
+
+- Login de usuarios
+- Comunicación con la API de autenticación
+- Gestión de sesión
+
+---
+
+#### StorageService
+
+Responsable de:
+
+- Persistir el token JWT
+- Persistir información del usuario autenticado
+- Recuperar información almacenada
+
+---
+
+#### AuthGuard
+
+Responsable de:
+
+- Proteger rutas privadas
+- Evitar acceso sin autenticación
+
+---
+
+#### RoleGuard
+
+Responsable de:
+
+- Validar permisos por roles
+- Restringir acceso a funcionalidades específicas
+
+---
+
+#### AuthInterceptor
+
+Responsable de:
+
+- Adjuntar automáticamente el JWT a las peticiones HTTP
+- Centralizar la autenticación de solicitudes
+
+---
+
+# ✅ Funcionalidades Implementadas
+
+## Fase 1 - Infraestructura de Autenticación
+
+- [x] Configuración centralizada de API
+- [x] Configuración de entornos
+- [x] Login mediante API REST
+- [x] Persistencia de JWT
+- [x] Persistencia de usuario autenticado
+- [x] AuthGuard
+- [x] RoleGuard
+- [x] AuthInterceptor
+- [x] Modelos de autenticación
+
+---
+
+# 📌 Próximas Fases
+
+## Fase 2 - Módulo Auth Visual
+
+- [ ] LoginComponent
+- [ ] Login Page
+- [ ] Auth Routes
+- [ ] Auth Layout
+- [ ] Manejo visual de errores
+
+---
+
+## Fase 3 - Layout Principal
+
+- [ ] Main Layout
+- [ ] Navbar
+- [ ] Sidebar
+- [ ] Dashboard Base
+
+---
+
+# ⚙️ Instalación
+
+Clonar repositorio:
+
+```bash
+git clone URL_DEL_REPOSITORIO
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar proyecto:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrir:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## 📌 Estado Actual del Proyecto
- 
-### Frontend - Angular
- 
-**Versión:** v0.1.0-alpha
- 
-### ✅ Completado
- 
-- Proyecto Angular creado
-- Arquitectura Standalone Components
-- Routing configurado
-- SCSS configurado
-- Estructura profesional de carpetas
- 
 ```text
-src/
-│
-├── app/
-│ ├── core/
-│ │ ├── constants/
-│ │ ├── guards/
-│ │ ├── interceptors/
-│ │ ├── models/
-│ │ └── services/
-│ │
-│ ├── features/
-│ ├── layout/
-│ └── shared/
-│
-├── environments/
-│
-├── main.ts
-├── styles.scss
-└── index.html
+http://localhost:4200
+```
+
+---
+
+# 📚 Convenciones de Desarrollo
+
+Durante el desarrollo del proyecto se siguen las siguientes reglas:
+
+- Tipado fuerte en TypeScript.
+- Separación de responsabilidades.
+- Un archivo por iteración.
+- Explicación previa al desarrollo de cada archivo.
+- Comentarios únicamente cuando aporten valor.
+- Actualización de README y CHANGELOG al finalizar cada fase.
+
+---
+
+# 👨‍💻 Estado Actual
+
+Versión actual:
+
+```text
+v0.1.0
+```
+
+Estado:
+
+```text
+Fase 1 completada ✅
+Fase 2 en desarrollo 🚧
+```
